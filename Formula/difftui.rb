@@ -2,8 +2,8 @@ class Difftui < Formula
   desc "TUI for comparing and diffing text"
   homepage "https://github.com/mholtzscher/difftui"
   url "https://github.com/mholtzscher/difftui/releases/download/difftui-v0.1.7/difftui-linux-x64"
-  sha256 "3ac4db133365b4b5c3efbc6886b538e11c5ca78a97bc647a5af8e074e3317884"
   version "0.1.7"
+  sha256 "3ac4db133365b4b5c3efbc6886b538e11c5ca78a97bc647a5af8e074e3317884"
   license "MIT"
 
   on_macos do
