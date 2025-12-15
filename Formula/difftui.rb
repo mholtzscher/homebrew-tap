@@ -4,17 +4,21 @@ class Difftui < Formula
   version "0.1.7"
   license "MIT"
 
+  # Default URL (used as fallback, overridden by platform-specific blocks)
+  url "https://github.com/mholtzscher/difftui/releases/download/difftui-v0.1.7/difftui-linux-x64"
+  sha256 "3ac4db133365b4b5c3efbc6886b538e11c5ca78a97bc647a5af8e074e3317884"
+
   on_macos do
     depends_on arch: :arm64
     on_arm do
-      url "https://github.com/mholtzscher/difftui/releases/download/difftui-v0.1.5/difftui-darwin-arm64"
+      url "https://github.com/mholtzscher/difftui/releases/download/difftui-v0.1.7/difftui-darwin-arm64"
       sha256 "05a0156a27dd262040dc0ec12af0e03b01dfcf0e0767d1fa8b8f0f6078fd8de7"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/mholtzscher/difftui/releases/download/difftui-v0.1.5/difftui-linux-arm64"
+      url "https://github.com/mholtzscher/difftui/releases/download/difftui-v0.1.7/difftui-linux-arm64"
       sha256 "170db8eee0c7864bb5933d5d9e0de94f85a47235a58cd376730d50c45e195a62"
     end
     on_intel do
