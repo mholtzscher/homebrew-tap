@@ -5,13 +5,12 @@ class Difftui < Formula
   license "MIT"
 
   on_macos do
+    depends_on arch: :arm64
     on_arm do
       url "https://github.com/mholtzscher/difftui/releases/download/difftui-v0.1.5/difftui-darwin-arm64"
       sha256 "05a0156a27dd262040dc0ec12af0e03b01dfcf0e0767d1fa8b8f0f6078fd8de7"
     end
   end
-
-  depends_on arch: :arm64 if OS.mac?
 
   on_linux do
     on_arm do
