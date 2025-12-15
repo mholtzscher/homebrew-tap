@@ -9,10 +9,6 @@ class Difftui < Formula
       url "https://github.com/mholtzscher/difftui/releases/download/difftui-v0.1.5/difftui-darwin-arm64"
       sha256 "05a0156a27dd262040dc0ec12af0e03b01dfcf0e0767d1fa8b8f0f6078fd8de7"
     end
-    on_intel do
-      url "https://github.com/mholtzscher/difftui/releases/download/difftui-v0.1.5/difftui-darwin-x64"
-      sha256 "405a618a7dc3b46c4ff48d6cbeab4f85598dcbc40686449105f46be4edefc28a"
-    end
   end
 
   on_linux do
@@ -30,8 +26,6 @@ class Difftui < Formula
     binary_name = "difftui"
     if OS.mac? && Hardware::CPU.arm?
       binary_name = "difftui-darwin-arm64"
-    elsif OS.mac? && Hardware::CPU.intel?
-      binary_name = "difftui-darwin-x64"
     elsif OS.linux? && Hardware::CPU.arm?
       binary_name = "difftui-linux-arm64"
     elsif OS.linux? && Hardware::CPU.intel?
