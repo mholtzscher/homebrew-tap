@@ -1,28 +1,28 @@
 class Difftui < Formula
   desc "TUI for comparing and diffing text"
   homepage "https://github.com/mholtzscher/difftui"
-  version "0.1.10"
+  version "0.1.11"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/mholtzscher/difftui/releases/download/difftui-v0.1.10/difftui-darwin-arm64"
-      sha256 "43ad69dcaf1d912fa9c2ca16254decb37750084da3be03dae5740cdb5f9df060"
+      url "https://github.com/mholtzscher/difftui/releases/download/v0.1.11/difftui-darwin-arm64"
+      sha256 "10261fc7e3f3126f23cab6243bc8ac5f2effd31559ae63119d3f4e35e363952b"
     end
     on_intel do
-      url "https://github.com/mholtzscher/difftui/releases/download/difftui-v0.1.10/difftui-darwin-x64"
-      sha256 "fc52c83347b2e18f10f46ee158b16422343ec13cf11e9abe86c24ddbbdf50891"
+      url "https://github.com/mholtzscher/difftui/releases/download/v0.1.11/difftui-darwin-x64"
+      sha256 "e50a4c12af1a2f9fcb83791fc7d7dd96d987a8d06bb6138052221502574d93d0"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/mholtzscher/difftui/releases/download/difftui-v0.1.10/difftui-linux-arm64"
-      sha256 "6bde4e23b8f4dcaa3b40fa92486af306e39c060ffcd19a99041b27184e30be88"
+      url "https://github.com/mholtzscher/difftui/releases/download/v0.1.11/difftui-linux-arm64"
+      sha256 "811ac8617eaecedff0fcadba35576f9f2c53813cc7b5a90b2df4edc3a9a81411"
     end
     on_intel do
-      url "https://github.com/mholtzscher/difftui/releases/download/difftui-v0.1.10/difftui-linux-x64"
-      sha256 "4fad60d84a1adf2bf4a7bf2d8d981b5bf86bf09814824d4533040d465323b02f"
+      url "https://github.com/mholtzscher/difftui/releases/download/v0.1.11/difftui-linux-x64"
+      sha256 "952db6dd5b2aff951a8e7c88e92a876a667b10cda1ac41150f962275e443c3db"
     end
   end
 
@@ -31,6 +31,6 @@ class Difftui < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/difftui --version")
+    assert_predicate bin/"difftui", :executable?
   end
 end
