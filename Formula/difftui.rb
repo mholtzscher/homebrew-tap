@@ -31,6 +31,6 @@ class Difftui < Formula
   end
 
   test do
-    assert_predicate bin/"difftui", :executable?
+    assert_match "difftui #{version}", shell_output("#{bin}/difftui --version")
   end
 end
