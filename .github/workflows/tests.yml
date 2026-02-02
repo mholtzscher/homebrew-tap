@@ -12,6 +12,7 @@ jobs:
       matrix:
         os: [ubuntu-22.04, ubuntu-24.04-arm, macos-15-intel, macos-latest]
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
     permissions:
       actions: read
       checks: read
@@ -19,9 +20,17 @@ jobs:
       pull-requests: read
     steps:
       - name: Set up Homebrew
+        id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cache Homebrew Bundler RubyGems
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: ${{ matrix.os }}-rubygems-v2-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ${{ matrix.os }}-rubygems-v2-
 
       - run: brew test-bot --only-cleanup-before
       - run: brew test-bot --only-setup
