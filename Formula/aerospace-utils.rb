@@ -8,14 +8,13 @@ class AerospaceUtils < Formula
   version "0.3.3"
   license "MIT"
   depends_on :macos
+  depends_on arch: :arm64
 
-  if Hardware::CPU.arm?
-    url "https://github.com/mholtzscher/aerospace-utils/releases/download/v0.3.3/aerospace-utils_0.3.3_darwin_arm64.tar.gz"
-    sha256 "38b2fb4b95f5035e5ee7caf9bed0fbc81dc01f32666c641daed8f9ff5eceb956"
+  url "https://github.com/mholtzscher/aerospace-utils/releases/download/v0.3.3/aerospace-utils_0.3.3_darwin_arm64.tar.gz"
+  sha256 "38b2fb4b95f5035e5ee7caf9bed0fbc81dc01f32666c641daed8f9ff5eceb956"
 
-    def install
-      bin.install "aerospace-utils"
-    end
+  def install
+    bin.install "aerospace-utils"
   end
 
   test do
