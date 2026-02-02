@@ -19,24 +19,9 @@ jobs:
       pull-requests: read
     steps:
       - name: Set up Homebrew
-        id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Cache Homebrew Bundler RubyGems
-        if: matrix.os != 'ubuntu-24.04-arm'
-        uses: actions/cache@v4
-        with:
-          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
-          key: ${{ matrix.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
-          restore-keys: ${{ matrix.os }}-rubygems-
-
-      - name: Fix gem permissions (ARM only)
-        if: matrix.os == 'ubuntu-24.04-arm'
-        run: |
-          sudo chmod 755 /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/bundle/ruby/3.4.0/gems 2>/dev/null || true
-          sudo chmod +t /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/bundle/ruby/3.4.0/gems 2>/dev/null || true
 
       - run: brew test-bot --only-cleanup-before
       - run: brew test-bot --only-setup
