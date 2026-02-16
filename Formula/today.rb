@@ -5,21 +5,21 @@
 class Today < Formula
   desc "A Go CLI tool built with Nix"
   homepage "https://github.com/mholtzscher/today"
-  version "0.1.4"
+  version "0.1.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mholtzscher/today/releases/download/v0.1.4/today_0.1.4_darwin_amd64.tar.gz"
-      sha256 "c6f6c896a726e4bda41452e1d570c7a04c16584a8a4e64308b04806470cd8f66"
+      url "https://github.com/mholtzscher/today/releases/download/v0.1.5/today_0.1.5_darwin_amd64.tar.gz"
+      sha256 "2cdc8c90e700a21a589d1822efab0360719f323c0f298cb4b829848fa8d9f345"
 
       def install
         bin.install "today"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mholtzscher/today/releases/download/v0.1.4/today_0.1.4_darwin_arm64.tar.gz"
-      sha256 "543613cee465ab3c0d3d5a54bd9caafecbf4ec8fa981c4f8910115be46f5873b"
+      url "https://github.com/mholtzscher/today/releases/download/v0.1.5/today_0.1.5_darwin_arm64.tar.gz"
+      sha256 "f5613be35db360a81008d80d26ece410f2f40c8183231a34384da1b6624e46a2"
 
       def install
         bin.install "today"
@@ -29,15 +29,15 @@ class Today < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mholtzscher/today/releases/download/v0.1.4/today_0.1.4_linux_amd64.tar.gz"
-      sha256 "87ce1f98aaaa0bdd6a07b5d91e0f95660718c106f2bf884ef283cb00083b9e2b"
+      url "https://github.com/mholtzscher/today/releases/download/v0.1.5/today_0.1.5_linux_amd64.tar.gz"
+      sha256 "176eaac39f3069a903455d594465f93f68fb0f23c36c2ad11198af1586937821"
       def install
         bin.install "today"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mholtzscher/today/releases/download/v0.1.4/today_0.1.4_linux_arm64.tar.gz"
-      sha256 "7a198a3ce47cf1796253a285d0d8967ae25383082a8c8056a5627154006f02fb"
+      url "https://github.com/mholtzscher/today/releases/download/v0.1.5/today_0.1.5_linux_arm64.tar.gz"
+      sha256 "772a73d15e745ad0b8130e5ca59c63ece23528e8a55d49905958676703d2230d"
       def install
         bin.install "today"
       end
