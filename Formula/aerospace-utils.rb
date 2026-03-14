@@ -5,15 +5,17 @@
 class AerospaceUtils < Formula
   desc "CLI for managing Aerospace workspace sizing based on monitor gaps"
   homepage "https://github.com/mholtzscher/aerospace-utils"
-  url "https://github.com/mholtzscher/aerospace-utils/releases/download/v0.3.3/aerospace-utils_0.3.3_darwin_arm64.tar.gz"
-  version "0.3.3"
-  sha256 "38b2fb4b95f5035e5ee7caf9bed0fbc81dc01f32666c641daed8f9ff5eceb956"
+  version "0.3.4"
   license "MIT"
-  depends_on arch: :arm64
   depends_on :macos
 
-  def install
-    bin.install "aerospace-utils"
+  if Hardware::CPU.arm?
+    url "https://github.com/mholtzscher/aerospace-utils/releases/download/v0.3.4/aerospace-utils_0.3.4_darwin_arm64.tar.gz"
+    sha256 "df5893da67367afa14ed24d1e3b7e919dd3c61aa74372c3dee5e17dd32a5dc7f"
+
+    define_method(:install) do
+      bin.install "aerospace-utils"
+    end
   end
 
   test do
