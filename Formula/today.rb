@@ -5,23 +5,23 @@
 class Today < Formula
   desc "A Go CLI tool built with Nix"
   homepage "https://github.com/mholtzscher/today"
-  version "0.1.5"
+  version "0.1.6"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mholtzscher/today/releases/download/v0.1.5/today_0.1.5_darwin_amd64.tar.gz"
-      sha256 "2cdc8c90e700a21a589d1822efab0360719f323c0f298cb4b829848fa8d9f345"
+      url "https://github.com/mholtzscher/today/releases/download/v0.1.6/today_0.1.6_darwin_amd64.tar.gz"
+      sha256 "e3b9c8125c14133d5ad42b76c99c8dc588336378d62cf6f2e2433e75cd2779fa"
 
-      def install
+      define_method(:install) do
         bin.install "today"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mholtzscher/today/releases/download/v0.1.5/today_0.1.5_darwin_arm64.tar.gz"
-      sha256 "f5613be35db360a81008d80d26ece410f2f40c8183231a34384da1b6624e46a2"
+      url "https://github.com/mholtzscher/today/releases/download/v0.1.6/today_0.1.6_darwin_arm64.tar.gz"
+      sha256 "e3e58f5d89cd004ec2316cb05b317d0c928d1144dd10da45414fdbf7dfee4290"
 
-      def install
+      define_method(:install) do
         bin.install "today"
       end
     end
@@ -29,16 +29,16 @@ class Today < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mholtzscher/today/releases/download/v0.1.5/today_0.1.5_linux_amd64.tar.gz"
-      sha256 "176eaac39f3069a903455d594465f93f68fb0f23c36c2ad11198af1586937821"
-      def install
+      url "https://github.com/mholtzscher/today/releases/download/v0.1.6/today_0.1.6_linux_amd64.tar.gz"
+      sha256 "fab7feb31975f80f06ec1e37d7f09be680c5e27994f96c93ebdf49cb7ac789d3"
+      define_method(:install) do
         bin.install "today"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mholtzscher/today/releases/download/v0.1.5/today_0.1.5_linux_arm64.tar.gz"
-      sha256 "772a73d15e745ad0b8130e5ca59c63ece23528e8a55d49905958676703d2230d"
-      def install
+      url "https://github.com/mholtzscher/today/releases/download/v0.1.6/today_0.1.6_linux_arm64.tar.gz"
+      sha256 "5ee3704d994b18ef31e5a78952a0d081d681d6e26aa3a15ee6c1751b56e546d1"
+      define_method(:install) do
         bin.install "today"
       end
     end
