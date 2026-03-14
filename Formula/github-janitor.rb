@@ -5,23 +5,23 @@
 class GithubJanitor < Formula
   desc "Cleanup and Sync GitHub Repository Settings"
   homepage "https://github.com/mholtzscher/github-janitor"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mholtzscher/github-janitor/releases/download/v0.2.0/github-janitor_0.2.0_darwin_amd64.tar.gz"
-      sha256 "4e53b786d83a827a272692c5efbc08ea9b693930e0f7729c09361573f011ccd7"
+      url "https://github.com/mholtzscher/github-janitor/releases/download/v0.2.1/github-janitor_0.2.1_darwin_amd64.tar.gz"
+      sha256 "da9677af14c5e93b0eb3c5c8b3dc8fcf18dd5f7c68da66235f2f166de86c4b85"
 
-      def install
+      define_method(:install) do
         bin.install "github-janitor"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mholtzscher/github-janitor/releases/download/v0.2.0/github-janitor_0.2.0_darwin_arm64.tar.gz"
-      sha256 "c8508eee21c08a420c0b248eb26bf2269fc4a73e920396e84f5679fb88261e16"
+      url "https://github.com/mholtzscher/github-janitor/releases/download/v0.2.1/github-janitor_0.2.1_darwin_arm64.tar.gz"
+      sha256 "0fd8d9318753ec9e9c833b73946ee24869afd4c5794f97c05b2b5ff0b2f63b44"
 
-      def install
+      define_method(:install) do
         bin.install "github-janitor"
       end
     end
@@ -29,16 +29,16 @@ class GithubJanitor < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mholtzscher/github-janitor/releases/download/v0.2.0/github-janitor_0.2.0_linux_amd64.tar.gz"
-      sha256 "e808732230d8037d5611c0a9ff469933af6b949f8d661dee41685933faef7794"
-      def install
+      url "https://github.com/mholtzscher/github-janitor/releases/download/v0.2.1/github-janitor_0.2.1_linux_amd64.tar.gz"
+      sha256 "3e83881b1cd58160933ee87a2f85280ccc8c2f411f07c2add1dba11a1c5f0155"
+      define_method(:install) do
         bin.install "github-janitor"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mholtzscher/github-janitor/releases/download/v0.2.0/github-janitor_0.2.0_linux_arm64.tar.gz"
-      sha256 "1658518e8c9a81a66fe7058759192cc41eae0e8c698e394847001d75d6633fbe"
-      def install
+      url "https://github.com/mholtzscher/github-janitor/releases/download/v0.2.1/github-janitor_0.2.1_linux_arm64.tar.gz"
+      sha256 "308079aec10684da5f432cf5eee4f03ccec1bf11bc5b8e19c4b6d031e04699ec"
+      define_method(:install) do
         bin.install "github-janitor"
       end
     end
